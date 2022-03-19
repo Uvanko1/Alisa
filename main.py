@@ -10,6 +10,9 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 cities = {
+    'рашка': '1533899/5fb12b3ee171413b4e00',
+    'миасс': '997614/648378fc0efe73fe834c',
+    'амстердам': '1540737/600c33b8de6810f3da43',
     'москва': ['1540737/daa6e420d33102bf6947', '213044/7df73ae4cc715175059e'],
     'нью-йорк': ['1652229/728d5c86707054d4745f', '1030494/aca7ed7acefde2606bdc'],
     'париж': ["1652229/f77136c2364eb90a3ea8", '123494/aca7ed7acefd12e606bdc']
