@@ -10,7 +10,7 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 cities = {
-    'рашка': ['1533899/5fb12b3ee171413b4e00', '937455/3fc82e85ee2c22ce81a3'],
+    'Рашка': ['1533899/5fb12b3ee171413b4e00', '937455/3fc82e85ee2c22ce81a3'],
     'миасс': ['997614/648378fc0efe73fe834c', '1521359/ce1a694233e3cd28e756'],
     'амстердам': ['1540737/600c33b8de6810f3da43', '1521359/0b1db27d12cb28e94f82'],
     'москва': ['1540737/daa6e420d33102bf6947', '213044/7df73ae4cc715175059e'],
@@ -152,6 +152,16 @@ def play_game(res, req):
                 # добавляем город к sessionStorage[user_id]['guessed_cities'] и отправляем его на второй круг.
                 # Обратите внимание на этот шаг на схеме.
                 res['response']['text'] = f'Вы пытались. Это {city.title()}. Сыграем ещё?'
+                res['response']['buttons'] = [
+                    {
+                        'title': 'Да',
+                        'hide': True
+                    },
+                    {
+                        'title': 'Нет',
+                        'hide': True
+                    }
+                ]
                 sessionStorage[user_id]['game_started'] = False
                 sessionStorage[user_id]['guessed_cities'].append(city)
                 return
