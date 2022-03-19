@@ -45,7 +45,7 @@ def handle_dialog(res, req):
             'game_started': False  # здесь информация о том, что пользователь начал игру. По умолчанию False
         }
         return
-    if 'Помощь' in req['request']['command']:
+    if 'помощь' in req['request']['command']:
         res['response']['text'] = 'текст помощи'
         return
     if sessionStorage[user_id]['first_name'] is None:
