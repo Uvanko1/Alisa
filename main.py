@@ -46,7 +46,7 @@ def handle_dialog(res, req):
         }
         return
     if 'помощь' in req['request']['command']:
-        res['response']['text'] = f'Это справка по игре. {res["response"]["text"]}'
+        res['response']['text'] = f'Это справка по игре.'
         return
     if sessionStorage[user_id]['first_name'] is None:
         first_name = get_first_name(req)
